@@ -501,7 +501,7 @@ text-align: left;
         white-space: normal;
         width: 900px;
     }
-    .section-nine .section {
+    .section-nine .d-flex {
         overflow-x: auto;
         max-width: 2100px;
     }
