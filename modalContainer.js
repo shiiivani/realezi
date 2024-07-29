@@ -115,16 +115,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const minSlider = document.getElementById("minSlider");
   const maxSlider = document.getElementById("maxSlider");
+  const minValueDisplay = document.getElementById("minValue");
+  const maxValueDisplay = document.getElementById("maxValue");
+
+  function updateSliderValues() {
+    minValueDisplay.textContent = `Rs.${minSlider.value}`;
+    maxValueDisplay.textContent = `Rs.${maxSlider.value}Cr`;
+  }
 
   minSlider.addEventListener("input", function () {
     if (parseInt(minSlider.value) >= parseInt(maxSlider.value)) {
       minSlider.value = maxSlider.value - 1;
     }
+    updateSliderValues();
   });
 
   maxSlider.addEventListener("input", function () {
     if (parseInt(maxSlider.value) <= parseInt(minSlider.value)) {
       maxSlider.value = minSlider.value + 1;
     }
+    updateSliderValues();
   });
+
+  // Initialize display values
+  updateSliderValues();
 });
