@@ -32,3 +32,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sliders = document.querySelectorAll(".video-slider");
+
+  sliders.forEach((slider) => {
+    const container = slider.querySelector(".video-container");
+    const videos = slider.querySelectorAll(".video");
+    const prevBtn = slider.querySelector(".prev-btn");
+    const nextBtn = slider.querySelector(".next-btn");
+    let index = 0;
+
+    const updateSlider = () => {
+      container.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    const checkScreenSize = () => {
+      if (window.innerWidth <= 420) {
+        prevBtn.style.display = "block";
+        nextBtn.style.display = "block";
+
+        prevBtn.addEventListener("click", slidePrev);
+        nextBtn.addEventListener("click", slideNext);
+      } else {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+
+        prevBtn.removeEventListener("click", slidePrev);
+        nextBtn.removeEventListener("click", slideNext);
+      }
+    };
+
+    const slidePrev = () => {
+      if (index > 0) {
+        index--;
+        updateSlider();
+      }
+    };
+
+    const slideNext = () => {
+      if (index < videos.length - 1) {
+        index++;
+        updateSlider();
+      }
+    };
+
+    window.addEventListener("resize", checkScreenSize);
+    checkScreenSize();
+  });
+});
