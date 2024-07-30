@@ -221,8 +221,9 @@ color: #fff !important;
 }
 
 .section-one .header-content{
-    position: relative;
-    top: 240px;
+    position: absolute;
+    bottom: 70px;
+    left: 11%;
     color: #fff;
     z-index: 9;
 }
@@ -932,7 +933,9 @@ width: 80%;
     .section-one br {
         display: none;
     }
-
+    .section-two .card-one {
+        height: 300px;
+    }
     .section-eight .container .inner-container {
         overflow-x: auto;
         white-space: nowrap;
@@ -969,8 +972,6 @@ width: 80%;
             .footer .lower-footer .lower-upper ul {
                 margin: 15px 0 !important;
             }
-    
-   
 }
 
 @media screen and (max-width: 800px) {
@@ -1057,9 +1058,7 @@ display: none;
     .section-ten .section img, .section-eleven .section img {
         width: 300px;
     }
-    .section-two .card-one {
-        height: 300px;
-    }
+    
 }
 
 @media screen and (max-width: 560px) {
@@ -1135,13 +1134,25 @@ display: none;
         margin: 0;
     }
     .video .volume-icon {
-        right: 120px;
+        right: 105px;
         bottom: 75px;
     }
     .section-four .video .d-flex {
         width: 200px;
         margin-right: auto;
         margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 389px) {
+    .video .volume-icon {
+        right: 90px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .video .volume-icon {
+        right: 80px;
     }
 }
 
