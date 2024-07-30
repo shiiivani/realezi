@@ -46,11 +46,16 @@
    backdrop-filter: blur(2px);
 }
 
+.upper-nav ul {
+    overflow-x: auto;
+}
+
 .upper-nav li {
     margin-right: 30px;
     font-size: 0.9rem;
     position: relative;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .upper-nav li:hover {
@@ -74,19 +79,68 @@
     color: #000;
     border-radius: 20px;
     font-size: 0.95rem;
+    margin-left: 20px !important;
 }
 
 .lower-nav {
     width: 100%;
     border-bottom: 0.5px solid #fff;
-    padding: 10px 10% 20px 20px;
+    padding: 10px 10px 20px 20px;
     backdrop-filter: blur(2px);
     padding-left: 8%;
+}
+
+.lower-nav .hamburger-menu {
+    align-self: flex-end;
 }
 
 .lower-nav li {
     margin-right: 25px;
     font-size: 0.9rem;
+}
+
+.mobile-nav {
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    background-color: #ffffff25;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    transition: top 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.mobile-nav.active {
+    display: flex;
+    top: 0;
+}
+.mobile-nav .close-icon {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+.mobile-nav img {
+    margin-bottom: 30px;
+}
+
+.mobile-nav ul {
+    padding-left: 0;
+    width: 100%;
+}
+
+.mobile-nav li {
+    padding: 20px 0;
+font-size: 1.3rem;
+color: #fff !important;
+}
+
+.mobile-nav li:hover {
+    color: #100F3F !important;
 }
 
 .section-one .header-content {
@@ -690,10 +744,6 @@ width: 80%;
     .modal-container .section-one-modal, .modal-container .section-five-modal, .modal-container .section-ten-modal {
         width: 95%;
             }
-    .nav .upper-nav {
-        display: none !important;
-    }
-
  .section-three .section {
         overflow-x: auto;
         max-width: 2100px;
@@ -851,8 +901,14 @@ flex-wrap: wrap;
     }
 }
 
-@media screen and (max-width: 475px) {
-    .nav .lower-nav ul li:not(:last-child) {
+@media screen and (min-width: 490px) {
+    .lower-nav .hamburger-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .nav .lower-nav ul li {
         display: none;
     }
 }
