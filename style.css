@@ -43,9 +43,9 @@ html, body {
     height: 100%;
     background: linear-gradient(
         to top right,
-        rgba(4, 4, 16, 0.3) 38%, /* Dark blue with 30% opacity at 38% */
-        rgba(30, 30, 118, 0.3) 62%, /* Medium blue with 30% opacity at 62% */
-        rgba(255, 255, 255, 0.11) 98% /* White with 30% opacity at 98% */
+        rgba(4, 4, 16, 0.3) 38%,
+        rgba(30, 30, 118, 0.3) 62%,
+        rgba(255, 255, 255, 0.11) 98% 
     );    z-index: 7;
 }
 
@@ -60,20 +60,9 @@ html, body {
     overflow: hidden;
     position: absolute;
     top: 60%;
-    left: 76%;
+    left: 75%;
     z-index: 1;
     transform: translate(-50%, -50%) rotate(15deg);
-}
-.section-one .slider-container-two  {
-    overflow: hidden;
-    position: absolute;
-    top: 60%;
-    left: 77%;
-    z-index: 1;
-    transform: translate(50%, -90%) rotate(15deg);
-}
-.section-one .slider-container-two .slider-wrapper {
-    height: 240vh
 }
 .section-one .slider-wrapper {
     display: flex;
@@ -109,11 +98,11 @@ html, body {
     }
 }
 @keyframes scroll-right {
-    0% {
+    100% {
         transform: translateY(0);
     }
-    100% {
-        transform: translateY(100%);
+    0% {
+        transform: translateY(-100%);
     }
 }
 .nav .upper-nav {
@@ -1072,8 +1061,6 @@ display: none;
     .modal-container .section-one-modal, .modal-container .section-five-modal, .modal-container .section-ten-modal {
         padding: 30px;
     }
-    
-   
 }
 
 @media screen and (max-height:590px) {
