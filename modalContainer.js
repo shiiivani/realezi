@@ -100,17 +100,34 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.classList.remove("active");
   });
 });
-
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdownLabel = document.querySelector(
-    ".section-five-modal .budget-dropdown .label"
+  const dropdownLabel = document.querySelector(".budget-dropdown .label");
+  const dropdownOptions = document.querySelector(
+    ".budget-dropdown .dropdown-options"
   );
   const dropdownContent = document.querySelector(
-    ".section-five-modal .dropdown-content"
+    ".budget-dropdown .dropdown-content"
   );
+  const arrowIcon = dropdownLabel.querySelector("img");
 
   dropdownLabel.addEventListener("click", function () {
-    dropdownContent.classList.toggle("active");
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 520) {
+      dropdownOptions.classList.toggle("active");
+      dropdownContent.classList.remove("active");
+    } else {
+      dropdownContent.classList.toggle("active");
+    }
+    arrowIcon.classList.toggle("rotate");
+  });
+
+  dropdownOptions.addEventListener("click", function (event) {
+    if (event.target.tagName === "LI") {
+      const selectedOption = event.target.textContent;
+      dropdownLabel.querySelector("p").textContent = selectedOption;
+      dropdownOptions.classList.remove("active");
+      arrowIcon.classList.remove("rotate");
+    }
   });
 
   const minSlider = document.getElementById("minSlider");
@@ -119,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const maxValueDisplay = document.getElementById("maxValue");
 
   function updateSliderValues() {
-    minValueDisplay.textContent = `Rs.${minSlider.value}`;
+    minValueDisplay.textContent = `Rs.${minSlider.value}Cr`;
     maxValueDisplay.textContent = `Rs.${maxSlider.value}Cr`;
   }
 
@@ -137,6 +154,5 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSliderValues();
   });
 
-  // Initialize display values
   updateSliderValues();
 });
