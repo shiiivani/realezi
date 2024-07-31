@@ -223,7 +223,7 @@ color: #fff !important;
 .section-one .header-content{
     position: absolute;
     bottom: 70px;
-    left: 11%;
+    left: 10%;
     color: #fff;
     z-index: 7;
 }
@@ -325,10 +325,32 @@ margin: 13px 0;
     color: #A8A9A9;
 }
 
+.budget-dropdown .dropdown-options {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid #606266;
+    border-top: none;
+    padding-left: 0;
+}
+.budget-dropdown .dropdown-options li {
+    padding: 8px 5px;
+    border-bottom: 1px solid #606266;
+    width: 100%;
+}
+.budget-dropdown .dropdown-options li:last-child {
+    border-bottom: 0;
+}
+
 .budget-dropdown .dropdown-content {
     background-color: #fff;
     position: relative;
     display: none;
+}
+
+.budget-dropdown .dropdown-options.active {
+    display: flex
 }
 
 .budget-dropdown .dropdown-content.active {
@@ -974,6 +996,12 @@ width: 80%;
         flex: 0 0 auto; 
         margin: 0 30px; 
       }
+      .section-ten .container , .section-eleven .container .section{
+        flex-direction:column-reverse;
+    }
+    .section-ten .container img, .section-eleven .container img {
+        width: 300px;
+    }
       .footer .upper-footer .d-flex:first-child{
         flex-wrap: wrap;
             }
@@ -1038,6 +1066,9 @@ display: none;
     .slider-values p {
         font-size: 0.9rem;
     }
+    .slider-labels span {
+        margin-left: 18px;
+    }
     .modal-container .section-one-modal, .modal-container .section-five-modal, .modal-container .section-ten-modal {
         padding: 30px;
     }
@@ -1059,12 +1090,6 @@ display: none;
     }
     .modal-container label {
         font-size: 1rem;
-    }
-    .section-ten .section , .section-eleven .section {
-        flex-direction:column-reverse
-    }
-    .section-ten .section img, .section-eleven .section img {
-        width: 300px;
     }
     
 }
@@ -1094,6 +1119,18 @@ display: none;
     .footer .upper-footer .d-flex:last-child h5{
         margin-top: 20px
     }
+}
+
+@media screen and (max-width: 520px) {
+    .budget-dropdown .label {
+        margin-bottom: 0;
+    }  
+}
+
+@media screen and (min-width: 520px) {
+    .budget-dropdown .dropdown-options {
+        display: none;
+    }  
 }
 
 @media screen and (max-height: 680px) {
@@ -1166,12 +1203,6 @@ display: none;
         right: 90px;
     }
 }
-
-/* @media screen and (min-height: 400px) {
-    .section-one {
-        height: 850px;
-    }
-} */
 
 @media screen and (max-width: 365px) {
     .video .volume-icon {
