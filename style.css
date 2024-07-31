@@ -189,7 +189,7 @@ html, body {
     text-align: center;
     padding: 20px;
     transition: top 0.5s ease-in-out;
-    z-index: 1000;
+    z-index: 999 !important;
 }
 
 .mobile-nav.active {
@@ -225,7 +225,7 @@ color: #fff !important;
     bottom: 70px;
     left: 11%;
     color: #fff;
-    z-index: 9;
+    z-index: 7;
 }
 
 .header-content {
@@ -588,9 +588,9 @@ position: relative;
 
 .section-four .nav-btn {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -600,10 +600,13 @@ position: relative;
 
 .section-four .prev-btn {
     left: 10px;
+    transform: rotate(90deg)
 }
 
 .section-four .next-btn {
     right: 10px;
+    transform: rotate(-90deg)
+
 }
 
 .section-five {
@@ -936,6 +939,17 @@ width: 80%;
     .section-two .card-one {
         height: 300px;
     }
+    .section-seven .slide {
+        flex-direction: column;
+    }
+    .section-seven .slider {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .section-seven .container .slider img {
+        width: 300px;
+    }
+    
     .section-eight .container .inner-container {
         overflow-x: auto;
         white-space: nowrap;
@@ -1028,13 +1042,7 @@ display: none;
         padding: 30px;
     }
     
-    .section-seven .section {
-        flex-direction: column;
-    }
-    .section-seven .section img {
-        width: 300px;
-    }
-    
+   
 }
 
 @media screen and (max-height:590px) {
@@ -1088,9 +1096,15 @@ display: none;
     }
 }
 
-@media screen and (max-height: 540px) {
+@media screen and (max-height: 680px) {
     .section-one {
         height: 700px;
+    }
+}
+
+@media screen and (max-height: 680px) and (max-width: 420px) {
+    .section-one {
+        height: 800px;
     }
 }
 
@@ -1102,6 +1116,9 @@ display: none;
 
 @media screen and (max-width: 490px) {
     .nav .lower-nav ul li {
+        display: none;
+    }
+    .section-eight .container p br {
         display: none;
     }
 }
@@ -1149,6 +1166,12 @@ display: none;
         right: 90px;
     }
 }
+
+/* @media screen and (min-height: 400px) {
+    .section-one {
+        height: 850px;
+    }
+} */
 
 @media screen and (max-width: 365px) {
     .video .volume-icon {
