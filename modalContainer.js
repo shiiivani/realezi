@@ -2,14 +2,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalBtn = document.getElementById("open-section-one-modal-container");
   const modal = document.querySelector(".section-one-modal-container");
   const modalContent = document.querySelector(".section-one-modal");
+  const closeIcon = document.querySelector(
+    ".section-one-modal-container .close-icon"
+  );
+  function showModal() {
+    modal.style.display = "flex";
+    modal.offsetHeight;
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+  }
+
+  function hideModal() {
+    modal.classList.add("hide");
+    modal.classList.remove("show");
+
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500);
+  }
 
   modalBtn.addEventListener("click", function () {
-    modal.classList.add("active");
+    showModal();
   });
-  modal.addEventListener("click", function (event) {
-    if (!modalContent.contains(event.target)) {
-      modal.classList.remove("active");
-    }
+
+  closeIcon.addEventListener("click", function (event) {
+    hideModal();
   });
 });
 
@@ -17,14 +34,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalBtn = document.getElementById("open-section-five-modal-container");
   const modal = document.querySelector(".section-five-modal-container");
   const modalContent = document.querySelector(".section-five-modal");
+  const closeIcon = document.querySelector(
+    ".section-five-modal-container .close-icon"
+  );
+
+  function showModal() {
+    modal.style.display = "flex";
+    modal.offsetHeight;
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+  }
+
+  function hideModal() {
+    modal.classList.add("hide");
+    modal.classList.remove("show");
+
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500);
+  }
 
   modalBtn.addEventListener("click", function () {
-    modal.classList.add("active");
+    showModal();
   });
-  modal.addEventListener("click", function (event) {
-    if (!modalContent.contains(event.target)) {
-      modal.classList.remove("active");
-    }
+
+  closeIcon.addEventListener("click", function (event) {
+    hideModal();
   });
 });
 
@@ -32,14 +67,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalBtn = document.getElementById("open-section-ten-modal-container");
   const modal = document.querySelector(".section-ten-modal-container");
   const modalContent = document.querySelector(".section-ten-modal");
+  const closeIcon = document.querySelector(
+    ".section-ten-modal-container .close-icon"
+  );
+  function showModal() {
+    modal.style.display = "flex";
+    modal.offsetHeight;
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+  }
+
+  function hideModal() {
+    modal.classList.add("hide");
+    modal.classList.remove("show");
+
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500);
+  }
 
   modalBtn.addEventListener("click", function () {
-    modal.classList.add("active");
+    showModal();
   });
-  modal.addEventListener("click", function (event) {
-    if (!modalContent.contains(event.target)) {
-      modal.classList.remove("active");
-    }
+
+  closeIcon.addEventListener("click", function (event) {
+    hideModal();
   });
 });
 

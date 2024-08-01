@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   let currentIndex = 0;
   const slides = document.querySelectorAll(".section-seven .slide");
-  const prevBtn = document.querySelector(".section-seven .prev-btn");
-  const nextBtn = document.querySelector(".section-seven .next-btn");
+  const navDotsContainer = document.querySelector(".section-seven .nav-dots");
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -11,21 +10,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     slides[index].style.display = "flex";
     slides[index].classList.add("active");
+
+    // Update the dots
+    const dots = document.querySelectorAll(".section-seven .nav-dots .dot");
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
   }
 
-  function prevSlide() {
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : slides.length - 1;
-    showSlide(currentIndex);
+  function createDots() {
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        showSlide(currentIndex);
+      });
+      navDotsContainer.appendChild(dot);
+    });
   }
 
-  function nextSlide() {
-    currentIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : 0;
-    showSlide(currentIndex);
-  }
-
-  prevBtn.addEventListener("click", prevSlide);
-  nextBtn.addEventListener("click", nextSlide);
-
-  // Initialize the slider
+  // Initialize the dots and slider
+  createDots();
   showSlide(currentIndex);
 });

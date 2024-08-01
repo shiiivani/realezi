@@ -12,13 +12,29 @@ videos.forEach((video) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const videos = document.querySelectorAll(".video");
+  const videoContainers = document.querySelectorAll(".video");
 
-  videos.forEach((videoContainer) => {
+  videoContainers.forEach((videoContainer) => {
     const video = videoContainer.querySelector("video");
+    const volumeCont = videoContainer.querySelector(".volume-container");
     const volumeUpIcon = videoContainer.querySelector(".volume-up");
     const volumeOffIcon = videoContainer.querySelector(".volume-off");
+    const videoSlider = videoContainer.closest(".video-slider");
+    const videoWrapper = videoSlider.querySelector(".video-container");
 
+    // Pause animation on hover and show the volume icon
+    videoContainer.addEventListener("mouseover", function () {
+      videoWrapper.style.animationPlayState = "paused";
+      volumeCont.classList.remove("hidden");
+    });
+
+    // Resume animation when hover ends and hide the volume icon
+    videoContainer.addEventListener("mouseout", function () {
+      videoWrapper.style.animationPlayState = "running";
+      volumeCont.classList.add("hidden");
+    });
+
+    // Toggle mute and icons on click
     volumeUpIcon.addEventListener("click", function () {
       video.muted = true;
       volumeUpIcon.classList.add("hidden");
