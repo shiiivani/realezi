@@ -243,7 +243,7 @@ font-size: 4rem;
 }
 
 .modal-container {
-    background-color: #ffffff45;
+    background-color: transparent;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -311,9 +311,10 @@ transition: opacity 0.5s ease-in-out;
 
 .modal-container .section-one-modal, .modal-container .section-five-modal, .modal-container .section-ten-modal {
     width: 60%;
-    background-color: #EBF0FF;
+    background-color: #ffffff;
     border-radius: 15px;
 padding: 50px;
+box-shadow: 0 0 40px 30px #00000030;
 }
 
 .modal-container h4 {
