@@ -308,7 +308,7 @@
                 <img src="./images/cross.png" width="15px" class="close-icon">
                 <h4>Please share your details</h4>
                 <form>
-                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Name" name="name" required>
                     <div class="d-flex align-items-end justify-content-start">
                         <select name="country-code">
                             <option value="+91" selected>+91</option>
@@ -317,9 +317,10 @@
                             <option value="+81">+81</option>
                             <option value="+7">+7</option>
                         </select>
-                        <input type="number" name="phone-number" placeholder="Enter mobile number">
+                        <input type="number" name="phone-number" placeholder="Enter mobile number" required
+                            maxlength="10">
                     </div>
-                    <input type="email" name="email" placeholder="EMAIL ID">
+                    <input type="email" name="email" placeholder="EMAIL ID" required>
                     <div class="property-type-dropdown">
                         <div class="label d-flex align-items-center justify-content-between">
                             <p>Property Type</p>
@@ -336,11 +337,11 @@
                     </div>
                 </form>
                 <div class="d-flex align-items-center justify-content-start">
-                    <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue">
+                    <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue" required>
                     <label for="checkboxId">By submitting this form, I agree to accept and agree to Realezi’s
                         T&C</label>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit-btn">Submit</button>
             </div>
         </div>
     </div>
@@ -804,7 +805,7 @@
                 <img src="./images/cross.png" width="15px" class="close-icon">
                 <h4>Please share your details</h4>
                 <form>
-                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Name" name="name" required>
                     <div class="d-flex align-items-end justify-content-start">
                         <select name="country-code">
                             <option value="+91" selected>+91</option>
@@ -813,9 +814,10 @@
                             <option value="+81">+81</option>
                             <option value="+7">+7</option>
                         </select>
-                        <input type="number" name="phone-number" placeholder="Enter mobile number">
+                        <input type="number" name="phone-number" placeholder="Enter mobile number" required
+                            maxlength="10">
                     </div>
-                    <input type="email" name="email" placeholder="EMAIL ID">
+                    <input type="email" name="email" placeholder="EMAIL ID" required>
                     <div class="property-type-dropdown">
                         <div class="label d-flex align-items-center justify-content-between">
                             <p>Property Type</p>
@@ -872,11 +874,11 @@
                     </div>
                 </form>
                 <div class="d-flex align-items-center justify-content-start">
-                    <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue">
+                    <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue" required>
                     <label for="checkboxId">By submitting this form, I agree to accept and agree to Realezi’s
                         T&C</label>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" class="submit-btn">Submit</button>
             </div>
         </div>
     </section>
@@ -1030,7 +1032,7 @@
             <img src="./images/cross.png" width="15px" class="close-icon">
             <h4>Please share your details</h4>
             <form>
-                <input type="text" placeholder="Name" name="name">
+                <input type="text" placeholder="Name" name="name" required>
                 <div class="d-flex align-items-end justify-content-start">
                     <select name="country-code">
                         <option value="+91" selected>+91</option>
@@ -1039,17 +1041,17 @@
                         <option value="+81">+81</option>
                         <option value="+7">+7</option>
                     </select>
-                    <input type="number" name="phone-number" placeholder="Enter mobile number">
+                    <input type="number" name="phone-number" placeholder="Enter mobile number" required>
                 </div>
-                <input type="email" name="email" placeholder="EMAIL ID">
-                <input type="text" name="location" placeholder="Location">
+                <input type="email" name="email" placeholder="EMAIL ID" required>
+                <input type="text" name="location" placeholder="Location" required>
             </form>
             <div class="d-flex align-items-center justify-content-start">
-                <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue">
+                <input type="checkbox" id="checkboxId" name="checkboxName" value="checkboxValue" required>
                 <label for="checkboxId">By submitting this form, I agree to accept and agree to Realezi’s
                     T&C</label>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </div>
     </section>
 
