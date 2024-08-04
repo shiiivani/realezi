@@ -152,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.classList.remove("active");
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownLabel = document.querySelector(".budget-dropdown .label");
   const dropdownOptions = document.querySelector(
@@ -207,4 +208,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateSliderValues();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll(".modals form");
+
+  forms.forEach((form) => {
+    const submitButton = form.querySelector(".submit-btn");
+
+    form.addEventListener("input", function () {
+      const isValid = form.checkValidity();
+      submitButton.disabled = !isValid;
+      if (isValid) {
+        submitButton.classList.add("active");
+      } else {
+        submitButton.classList.remove("active");
+      }
+    });
+  });
 });
