@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const modalBtn = document.getElementById("open-section-one-modal-container");
   const modal = document.querySelector(".section-one-modal-container");
-  const modalContent = document.querySelector(".section-one-modal");
   const closeIcon = document.querySelector(
     ".section-one-modal-container .close-icon"
   );
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const modalBtn = document.getElementById("open-section-five-modal-container");
   const modal = document.querySelector(".section-five-modal-container");
-  const modalContent = document.querySelector(".section-five-modal");
   const closeIcon = document.querySelector(
     ".section-five-modal-container .close-icon"
   );
@@ -66,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const modalBtn = document.getElementById("open-section-ten-modal-container");
   const modal = document.querySelector(".section-ten-modal-container");
-  const modalContent = document.querySelector(".section-ten-modal");
   const closeIcon = document.querySelector(
     ".section-ten-modal-container .close-icon"
   );
