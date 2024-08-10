@@ -561,6 +561,8 @@ margin: 13px 0;
     padding: 10px;
     color: #fff;
     background-color: #100F3F;
+    z-index: 10;
+    position: relative;
 }
 
 .modal-container button:hover {
